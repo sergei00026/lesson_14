@@ -38,10 +38,10 @@ div[class*="__container"] {
 		display: inline-flex;
 		justify-content: center;
 		text-align: center;
-		transition: 0.5s;
+		transition: 0.3s;
 		&:hover {
 			filter: drop-shadow(0px 8px 16px rgba(38, 38, 38, 0.24)) drop-shadow(0px 16px 24px rgba(38, 38, 38, 0.2));
-			transition: 0.5s;
+			transition: 0.3s;
 		}
 	}
 }
@@ -204,6 +204,12 @@ div[class*="__container"] {
 		letter-spacing: 0.15px;
 		color: #000000;
 		padding: 5px 0px;
+		transition: 0.5s;
+		text-decoration: underline transparent;
+		&:hover {
+			text-decoration: underline;
+			transition: 0.5s;
+		}
 	}
 	&__item:first-child &__link::after {
 		content: "";
@@ -320,7 +326,7 @@ div[class*="__container"] {
 	&__body {
 		background: #5d62b5;
 		border-radius: 40px;
-		padding: 100px 87px 354px 87px;
+		padding: 100px 87px 1px 87px;
 		position: relative;
 		&::after {
 			content: "";
@@ -343,12 +349,14 @@ div[class*="__container"] {
 		line-height: 150%;
 		letter-spacing: 0.15px;
 		color: #f5f5f5;
-		margin: 0px 0px 24px 0px;
+		margin: 0px 0px 54px 0px;
 	}
 	// .whoweare-page__dog
 	&__dog {
-		position: absolute;
-		bottom: -100px;
+		position: relative;
+		margin: 0px 0px -100px 0px;
+		width: 846px;
+		padding: 0px 0px 420px 0px;
 		&::before {
 			position: absolute;
 			content: "";
@@ -363,6 +371,12 @@ div[class*="__container"] {
 	&__img {
 		filter: drop-shadow(0px 8px 16px rgba(38, 38, 38, 0.24)) drop-shadow(0px 16px 24px rgba(38, 38, 38, 0.2));
 		border-radius: 40px;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
 	}
 }
 
@@ -394,8 +408,20 @@ div[class*="__container"] {
 		align-items: flex-start;
 		min-width: 280px;
 	}
-	&__img {
+	&__adapt-img {
+		flex: 0 0 63px;
+		position: relative;
 		margin: 0px 23px 0px 0px;
+		padding: 0px 0px 63px 0px;
+	}
+	&__img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		object-position: center;
 	}
 	&__content {
 	}
@@ -446,17 +472,25 @@ div[class*="__container"] {
 		justify-content: center;
 		position: relative;
 		z-index: 3;
+		flex-wrap: wrap;
 	}
 
 	// .video-page__dog
 	&__dog {
 		flex: 1 1 50%;
 		margin: 44px 0px 0px -205px;
+		padding: 0px 0px 43% 0px;
+		position: relative;
+		overflow: hidden;
 	}
 	// .video-page__images
 	&__images {
+		position: absolute;
 		width: 100%;
 		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: contain;
 	}
 	// .video-page__content
 	&__content {
@@ -533,12 +567,23 @@ div[class*="__container"] {
 		&:hover {
 			filter: drop-shadow(0px 8px 16px rgba(38, 38, 38, 0.24)) drop-shadow(0px 16px 24px rgba(38, 38, 38, 0.2));
 			transition: 0.5s;
-			cursor: pointer;
 		}
+	}
+	&__adapt-img {
+		position: relative;
+		margin: 0px 0px 33px 0px;
+		flex: 0 0 63px;
+		padding: 0px 63px 0px 0px;
 	}
 	// .our-services-page__img
 	&__img {
-		margin: 0px 0px 33px 0px;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		object-position: center;
 	}
 	// .our-services-page__heading
 	&__heading {
@@ -771,11 +816,19 @@ div[class*="__container"] {
 	&__images {
 		position: absolute;
 		top: 90px;
+		width: 864px;
+		padding: 0px 0px 480px 0px;
 	}
 	// .gallery-page__img
 	&__img {
 		filter: drop-shadow(0px 8px 16px rgba(38, 38, 38, 0.24)) drop-shadow(0px 16px 24px rgba(38, 38, 38, 0.2));
 		border-radius: 40px;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
 	}
 }
 
@@ -792,22 +845,6 @@ div[class*="__container"] {
 		height: 1507px;
 		bottom: 0;
 		left: 0;
-	}
-	&__item:first-child &__people::before {
-		content: "";
-		background: url("../img/customers/man.jpg") 0 0 / 48px no-repeat;
-		width: 48px;
-		height: 48px;
-		display: inline-block;
-		margin: 0px 17px 0px 0px;
-	}
-	&__item:last-child &__people::before {
-		content: "";
-		background: url("../img/customers/woman.jpg") 0 0 / 48px no-repeat;
-		width: 48px;
-		height: 48px;
-		display: inline-block;
-		margin: 0px 17px 0px 0px;
 	}
 
 	// .customers-page__container
@@ -865,16 +902,6 @@ div[class*="__container"] {
 	// .impact-page__container
 	&__container {
 		position: relative;
-		&::after {
-			content: "";
-			position: absolute;
-			width: 498px;
-			height: 315px;
-			top: calc(-112px - 80px);
-			right: -54px;
-			background: url("../img/impact/pexels-photo.jpg") 0 0 no-repeat;
-			border-radius: 40px;
-		}
 		&::before {
 			content: "";
 			position: absolute;
@@ -886,6 +913,23 @@ div[class*="__container"] {
 			background: url("../img/impact/Blob-2.svg") 0 0 no-repeat;
 			border-radius: 40px;
 		}
+	}
+	&__decor {
+		position: absolute;
+		width: 498px;
+		height: 315px;
+		top: calc(-112px - 80px);
+		right: -54px;
+	}
+	&__decor-img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		z-index: 10;
+		border-radius: 40px;
 	}
 	// .impact-page__title
 	&__title {
@@ -990,6 +1034,11 @@ div[class*="__container"] {
 		flex-wrap: wrap;
 		row-gap: 20px;
 	}
+	&__colum {
+		&_notheading {
+			margin: 50px 0px 0px 0px !important;
+		}
+	}
 	// .footer__colum
 	&__colum {
 		& > :not(:last-child) {
@@ -1001,13 +1050,13 @@ div[class*="__container"] {
 		&:first-child {
 			flex: 0 1 235px;
 		}
-		&:nth-child(3) {
-			margin: 45px 0px 0px 0px;
-		}
+
 		&:nth-child(4) {
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
+		}
+		&_notheading {
 		}
 	}
 	// .footer__logo
@@ -1068,6 +1117,12 @@ div[class*="__container"] {
 		line-height: 157%;
 		letter-spacing: 0.15px;
 		color: #4b4b4b;
+		transition: 0.5s;
+		text-decoration: underline transparent;
+		&:hover {
+			text-decoration: underline;
+			transition: 0.5s;
+		}
 	}
 	// .footer__street
 	&__street {
@@ -1078,11 +1133,23 @@ div[class*="__container"] {
 	&__tel {
 		background: url("../img/footer/smartphone_24px.svg") 0 0 no-repeat;
 		padding: 0px 0px 0px 34px;
+		transition: 0.5s;
+		text-decoration: underline transparent;
+		&:hover {
+			text-decoration: underline;
+			transition: 0.5s;
+		}
 	}
 	// .footer__email
 	&__email {
 		background: url("../img/footer/email_24px.svg") 0 0 no-repeat;
 		padding: 0px 0px 0px 34px;
+		transition: 0.5s;
+		text-decoration: underline transparent;
+		&:hover {
+			text-decoration: underline;
+			transition: 0.5s;
+		}
 	}
 	// .footer__timework
 	&__timework {
